@@ -1,0 +1,17 @@
+      <section>
+        <div class="card cyan darken-4">
+        <div class="card-content white-text">
+        <h2 class="dashboard-title">Create New Post</h2>
+        <form  id="newpost-form" action="/api/blog/post" method="post">
+          <div>
+            <input type="text" id="newpost-title" placeholder="Your post subject" name="title" />
+            <textarea type="text" id="newpost-textarea" class="materialize-textarea" placeholder="Your post text" rows="15" name="contents"></textarea>
+            <div class="newpost-submit-container">
+              <a class="waves-effect waves-light btn" id="newpost-submit-button">Submit</a>
+            </div>
+          </div>
+        </form>
+        </div>
+        </div>
+      <script src="/js/newpost.js"></script>
+      </section>

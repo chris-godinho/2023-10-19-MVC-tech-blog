@@ -6,13 +6,96 @@
  * Made By MaterializeCSS.com
  */
 
+* {
+  font-family: 'Rubik', sans-serif;
+}
+
+input, textarea {
+  color: #fff;
+}
+
+.container {
+  height: 100vh;
+}
+
+.card-title {
+  color: #fff;
+}
+
 .icon-block {
   padding: 0 15px;
 }
+
 .icon-block .material-icons {
 	font-size: inherit;
 }
 
 .page-title {
   margin-left: 20px;
+}
+
+.blog-block {
+  padding-top: 30px;
+}
+
+.blogpost-title {
+  
+  font-weight: bold;
+}
+
+.blogspot-infotext {
+  font-size: small;
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+
+.back-button {
+  margin-top: 20px;
+  align-self: flex-start;
+}
+
+.blogpost-contents {
+  text-align: justify;
+  padding-bottom: 30px;
+}
+
+.dashboard-title {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.newpost-button {
+  margin-bottom: 30px;
+  display: inline-block;
+}
+
+.newpost-button-container {
+  text-align: center;
+}
+
+.newpost-submit-container {
+  text-align: right;
+}
+
+.card-top {
+  display: flex;
+}
+
+.card-top .blogpost-title {
+  text-align: center;
+  flex-grow: 1;
+  align-self: flex-end;
+}
+
+.left-align {
+  display: flex;
+  align-items: center;
+}
+
+.comment-title {
+  font-size: large;
+}
+
+.comment-submit-container {
+  text-align: right;
 }

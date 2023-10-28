@@ -1,0 +1,7 @@
+<h2 class="dashboard-title">{{user.username}}'s Dashboard</h2>
+<div class="newpost-button-container">
+  <a href="/newpost" class="newpost-button btn red lighten-1">Create a New Post</a>
+</div>
+{{#each blogposts}}
+  {{> blogpost-details}}
+{{/each}}

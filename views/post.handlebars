@@ -1,0 +1,51 @@
+  <div class="row">
+    <div class="card cyan darken-4">
+      <div class="card-content white-text">
+        <div class="card-top">
+        <div class="left-align">
+        <a href="/" class="waves-effect waves-light btn back-button">
+          Back
+        </a>
+        </div>
+        <h3 class="blogpost-title">{{title}}</h3>
+        </div>
+        <br>
+        <p class="blogpost-contents">
+          {{contents}}
+        </p>
+        <br>
+        <p class="blogspot-infotext">
+          Posted by {{user.username}} on {{format_date date}}
+        </p>
+      </div>
+    </div>
+    {{#each comments}}
+    <div class="card cyan darken-4">
+      <div class="card-content white-text">
+        <p class="blogpost-contents">
+          {{text}}
+        </p>
+        <p class="blogspot-infotext">
+          Posted by {{user.username}} on {{format_date timestamp}}
+        </p>
+      </div>
+    </div>
+    {{/each}}
+    {{#if loggedIn}}
+    <div class="card cyan darken-4">
+      <div class="card-content white-text">
+        <p class="comment-title">Add a Comment:</p>
+        <form id="comment-form" action="/api/blog/comment" method="post">
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea id="comment-text" class="materialize-textarea" placeholder="Your comment here" name="text"></textarea>
+            </div>
+          </div>
+          <div class="comment-submit-container">
+            <a class="waves-effect waves-light btn" id="comment-submit-button">Submit</a>
+          </div>
+        </form>
+      </div>
+    {{/if}}
+    <script src="/js/post.js"></script>
+  </div>

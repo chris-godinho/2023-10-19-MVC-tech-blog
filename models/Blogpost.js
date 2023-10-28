@@ -16,17 +16,18 @@ Blogpost.init(
       allowNull: false,
     },
     contents: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    creator: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
     },
     date: {
       type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
       allowNull: false,
-    }
+    },
+    user_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
   },
   {
     sequelize,

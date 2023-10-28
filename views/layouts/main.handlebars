@@ -6,17 +6,23 @@
   <title>Chris' Tech Thoughts</title>
   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
   <link rel="stylesheet" type="text/css" href="/css/materialize.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
-<body>
+<body class="amber accent-3">
   <nav>
     <div class="nav-wrapper red lighten-1">
       <a href="/" class="brand-logo page-title">Chris' Tech Thoughts</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
+        {{#if loggedIn}}
+        {{req.session.user_id}}
+        {{/if}}
         <li><a href="/">Home</a></li>
         <li><a href="/dashboard">Dashboard</a></li>
         {{#if loggedIn}}
-        <li><a href="/logout" id="logout">Logout</a></li>
+        <li><a href="/users/logout" id="logout">Logout</a></li>
         {{else}}
         <li><a href="/login">Login</a></li>
         {{/if}}
@@ -25,7 +31,7 @@
   </nav>
   <main class="amber accent-3">
     <div class="container">
-      <section>
+      <section class="blog-block">
         {{{body}}}
       </section>
     </div>
