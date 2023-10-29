@@ -19,6 +19,24 @@ router.post('/post', async (req, res) => {
   }
 );
 
+router.delete('/post', async (req, res) => {
+    try {
+        console.info("Post ID:", req.session.post_id);
+        const dbBlogpost = await Blogpost.destroy({
+            where: {
+                id: req.session.post_id,
+            },
+        });
+        if (!dbBlogpost) {
+            res.status(404).json({ message: 'No post found with this id!' });
+        }
+        res.status(200).json(dbBlogpost);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
 router.post('/comment', async (req, res) => {
     console.log('Request Body:', req.body);
     console.log('Post ID:', req.session.post_id);

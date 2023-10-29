@@ -41,7 +41,7 @@ router.get('/post/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['username'],
+          attributes: ['username', 'id'],
         },
         {
           model: Comment,
@@ -57,12 +57,6 @@ router.get('/post/:id', async (req, res) => {
       ],
     });
     
-    /*
-    req.session.save(() => {
-      req.session.post_id = dbBlogpost.id;
-    });
-    */
-
     const blogpost = dbBlogpost.get({ plain: true });
 
     req.session.post_id = dbBlogpost.id;
@@ -73,6 +67,7 @@ router.get('/post/:id', async (req, res) => {
     res.render('post', {
       ...blogpost,
       loggedIn: req.session.loggedIn,
+      userId: req.session.user_id,
     });
   } catch (err) {
     console.log(err);

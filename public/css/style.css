@@ -39,7 +39,7 @@ input, textarea {
 }
 
 .blogpost-title {
-  
+  text-align: center;
   font-weight: bold;
 }
 
@@ -52,6 +52,12 @@ input, textarea {
 .back-button {
   margin-top: 20px;
   align-self: flex-start;
+}
+
+#delete-button {
+  margin-top: 20px;
+  align-self: flex-start;
+  background-color: red;
 }
 
 .blogpost-contents {
@@ -79,6 +85,7 @@ input, textarea {
 
 .card-top {
   display: flex;
+  justify-content: space-between;
 }
 
 .card-top .blogpost-title {
@@ -88,6 +95,11 @@ input, textarea {
 }
 
 .left-align {
+  display: flex;
+  align-items: center;
+}
+
+.right-align {
   display: flex;
   align-items: center;
 }

@@ -7,8 +7,15 @@
           Back
         </a>
         </div>
-        <h3 class="blogpost-title">{{title}}</h3>
+        <div class="right-align">
+        {{#if (eq userId user.id)}}
+        <a class="waves-effect waves-light btn" id="delete-button">
+          Delete
+        </a>
+        {{/if}}
         </div>
+        </div>
+        <h3 class="blogpost-title">{{title}}</h3>
         <br>
         <p class="blogpost-contents">
           {{contents}}
