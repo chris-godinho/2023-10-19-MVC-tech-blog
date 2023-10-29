@@ -20,7 +20,8 @@ router.post('/post', async (req, res) => {
 );
 
 router.post('/comment', async (req, res) => {
-      console.log(req.body); // Log the request body for debugging
+    console.log('Request Body:', req.body);
+    console.log('Post ID', req.session.post_id);
       try {
           const dbComment = await Comment.create({
               text: req.body.text,
@@ -28,6 +29,7 @@ router.post('/comment', async (req, res) => {
               user_id: req.session.user_id,
               post_id: req.session.post_id,
           });
+          console.log('Created Comment:', dbComment);
           res.status(200);
           res.redirect(`/post/${dbComment.post_id}`);
       } catch (err) {

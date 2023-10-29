@@ -61,7 +61,7 @@ router.get('/post/:id', async (req, res) => {
       req.session.post_id = dbBlogpost.id;
     });
 
-    console.log(dbBlogpost.id);
+    console.log("Post ID:", dbBlogpost.id);
 
     const blogpost = dbBlogpost.get({ plain: true });
 
