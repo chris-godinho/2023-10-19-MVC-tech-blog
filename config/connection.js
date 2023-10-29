@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
+/*
 let sequelize;
 
 if (process.env.DATABASE_URL) {
@@ -23,8 +24,8 @@ if (process.env.DATABASE_URL) {
     database: process.env.DB_NAME,
   });
 }
+*/
 
-/*
 const sequelize = new Sequelize(
   process.env.DB_NAME,
   process.env.DB_USER,
@@ -32,9 +33,8 @@ const sequelize = new Sequelize(
   {
     host: process.env.DB_HOST,
     dialect: 'mysql',
-    port: 3306,
+    port: process.env.DB_PORT,
   }
 );
-*/
 
 module.exports = sequelize;
