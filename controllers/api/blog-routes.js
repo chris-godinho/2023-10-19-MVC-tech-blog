@@ -21,7 +21,7 @@ router.post('/post', async (req, res) => {
 
 router.post('/comment', async (req, res) => {
     console.log('Request Body:', req.body);
-    console.log('Post ID', req.session.post_id);
+    console.log('Post ID:', req.session.post_id);
       try {
           const dbComment = await Comment.create({
               text: req.body.text,
