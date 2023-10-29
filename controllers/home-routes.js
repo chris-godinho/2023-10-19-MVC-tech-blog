@@ -6,6 +6,7 @@ router.get('/', async (req, res) => {
   try {
     const dbBlogpost = await Blogpost.findAll(
       {
+        order: [['date', 'DESC']],
         include: [
           {
             model: User,
@@ -87,6 +88,7 @@ router.get('/dashboard', async (req, res) => {
       include: [
         {
           model: Blogpost,
+          order: [['date', 'DESC']],
         }
       ],
     });
