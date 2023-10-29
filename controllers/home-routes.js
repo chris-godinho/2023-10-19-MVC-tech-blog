@@ -56,17 +56,19 @@ router.get('/post/:id', async (req, res) => {
         },
       ],
     });
-
+    
+    /*
     req.session.save(() => {
       req.session.post_id = dbBlogpost.id;
     });
-
-    console.log("Post ID:", dbBlogpost.id);
-    console.log("Session Post ID:", req.session.post_id);
+    */
 
     const blogpost = dbBlogpost.get({ plain: true });
 
-    console.info(blogpost);
+    req.session.post_id = dbBlogpost.id;
+
+    console.log("Post ID:", dbBlogpost.id);
+    console.log("Session Post ID:", req.session.post_id);
 
     res.render('post', {
       ...blogpost,
